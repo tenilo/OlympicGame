@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIS9qLoLSdkmnBm9rDhjXeAAAAAACAAAAAAAQZgAAAAEAACAAAAAmWhh/2pXl0zT5Na01zy+4q6WNy7CXWckjaLpKEXgsEAAAAAAOgAAAAAIAACAAAADtRnSiTGlzIhMP6iUaKj5zHQtEX1xYIpDHeKagQ4U6ESAAAAB2C4bXapbfaACt+BieLQoO0uQZ0GXrIAAo7iTX3DUfLEAAAAD/WmY1eRWRwr33pQO+g1oPqTEbtORuGGBLF2MkruJCV8B50ZcE06VdtmKqpufGce+MWFTseIX2wmwWbAKmpqZa</EncryptedPassword>
+    <History>True|2024-05-23T04:55:45.3457385Z;True|2024-05-20T19:52:08.0647788+02:00;True|2024-05-20T18:47:14.1689324+02:00;True|2024-05-20T18:44:22.3767490+02:00;True|2024-05-20T18:34:52.6654613+02:00;True|2024-05-20T18:04:08.7506472+02:00;True|2024-05-20T15:38:39.1626732+02:00;True|2024-05-20T14:08:38.0111988+02:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="con">
+      <Value>Data Source=SQL6032.site4now.net%3bInitial Catalog=db_aa8f16_olympicbd%3bUser Id=db_aa8f16_olympicbd_admin%3bPassword=tenilo1989</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

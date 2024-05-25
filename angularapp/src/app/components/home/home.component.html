@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" class="main-toolbar">
+  <span>Jeux Olympiques 2024 - France</span>
+</mat-toolbar>
+
+<mat-card class="welcome-card">
+  <mat-card-header>
+    <mat-card-title>Bienvenue aux Jeux Olympiques 2024</mat-card-title>
+    <mat-card-subtitle>Rejoignez-nous pour célébrer le sport mondial en France!</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="\assets\img\JO2.jpeg" alt="Bienvenue à paris" class="welcome-image">
+  <mat-card-content>
+    <p>Les Jeux Olympiques réunissent des athlètes du monde entier dans une compétition épique de force, d'agilité et de sportivité. Ne manquez pas cet événement spectaculaire!</p>
+  </mat-card-content>
+</mat-card>
+
+<!-- Section des épreuves utilisant des cartes pour chaque sport -->
+<div class="events-container">
+  <mat-card class="event-card" *ngFor="let event of events">
+    <mat-card-header>
+      <mat-card-title>{{ event.name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="event.image" alt="{{ event.name }}">
+    <mat-card-content>
+      <p>{{ event.description }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- Bouton pour acheter des billets -->
+<div class="actions">
+  <button mat-raised-button color="accent" routerLink="/offers">
+    Achetez vos billets maintenant
+  </button>
+</div>

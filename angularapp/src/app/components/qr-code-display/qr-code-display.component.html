@@ -1,0 +1,13 @@
+<div *ngIf="!isLoading">
+  <div *ngIf="qrCodeValue; else noDataTemplate">
+      <qrcode [qrdata]="qrCodeValue" [width]="256" errorCorrectionLevel="M"></qrcode>
+  </div>
+  <ng-template #noDataTemplate>
+      <p>Aucune donnée de QR Code disponible.</p>
+  </ng-template>
+</div>
+<div *ngIf="isLoading">
+<p>Chargement du QR Code...</p>
+</div>
+
+  

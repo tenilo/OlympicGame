@@ -1,0 +1,7 @@
+<form [formGroup]="offerForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="type" placeholder="Type de l'offre">
+  <input type="number" formControlName="access" placeholder="Nombre d'accès">
+  <input type="number" formControlName="price" placeholder="Prix">
+  <input type="text" formControlName="description" placeholder="Description">
+  <button type="submit">{{ offer?.offerId !== -1 ? 'Modifier' : 'Ajouter' }}</button>
+</form>

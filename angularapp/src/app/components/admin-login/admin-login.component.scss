@@ -1,0 +1,40 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ajustez selon la largeur désirée */
+    max-width: 400px; /* Ajustez selon la largeur maximale désirée */
+    margin: auto;
+  }
+  
+  mat-form-field {
+    width: 100%; /* Assurez-vous que les champs de formulaire prennent toute la largeur */
+  }
+  
+  .error-message {
+    color: #D32F2F;
+    margin-top: 10px;
+  }
+  
+  mat-error {
+    color: inherit;
+  }
+  
+  /* CSS pour le conteneur parent */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /*  100% de la hauteur de la fenêtre */
+    margin: 0;
+  }
+  
+  /* CSS pour le formulaire */
+  .form-wrapper {
+    width: 100%; 
+    max-width: 400px; 
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: white;
+  }
+  

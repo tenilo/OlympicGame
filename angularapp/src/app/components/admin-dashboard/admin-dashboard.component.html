@@ -1,0 +1,54 @@
+<div class="admin-dashboard">
+  <div>
+    <h2>Gestion des Offres</h2>
+    <button (click)="showAddForm()">Ajouter une nouvelle offre</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Accès</th>
+          <th>Prix</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let offre of offers">
+          <td>{{ offre.type }}</td>
+          <td>{{ offre.access }}</td>
+          <td>{{ offre.price }}€</td>
+          <td>{{ offre.description }}</td>
+          <td>
+            <button (click)="showEditForm(offre)">Modifier</button>
+            <button *ngIf="offre.offerId !== undefined" (click)="deleteOffer(offre.offerId)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <h2>Détails des Ventes</h2>
+    <!-- Section pour les statistiques de vente -->
+  <h3>Statistiques de Vente à ce jour </h3>
+  <div>
+    <ul> Total des tickets: {{ totalSales }} </ul>
+    <ul> Sommes des Ventes: {{ totalPrice }} €</ul>
+  </div>
+ 
+  <div>
+    <h4>Ventes par Type de Ticket</h4>
+    <ul>
+      <li *ngFor="let type of keySalesByType">
+        {{ type }} - {{ salesByType.get(type)?.quantity }} tickets vendus : pour un Total de {{ salesByType.get(type)?.total }} €
+      </li>      
+    </ul>
+  </div>
+
+  </div>
+
+  <div *ngIf="selectedOffer" class="modal">
+    <app-offer-form [offer]="selectedOffer" (submitForm)="onSubmit($event)"></app-offer-form>
+    <button class="idFermer" (click)="selectedOffer = null">Fermer</button>
+  </div>
+</div>

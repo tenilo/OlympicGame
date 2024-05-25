@@ -1,0 +1,13 @@
+
+.ticket-container {
+  display: flex;
+  flex-direction: row;  // Alignement horizontal des éléments
+  flex-wrap: wrap;      // Permet aux éléments de passer à la ligne suivante si l'espace horizontal est insuffisant
+  justify-content: center; // Centre les cartes horizontalement si moins de cartes pour remplir l'espace
+  gap: 20px;             // Espacement entre les cartes
+}
+
+.ticket-card {
+  flex: 1 1 300px;      // Flexibilité pour chaque carte, avec une base de 300px
+  max-width: 300px;     // Limite la largeur maximale de chaque carte
+}

@@ -1,0 +1,25 @@
+<div class="container">
+  
+  <div class="form-wrapper">
+    <p>S'authentifier ou créer son compte</p>
+    <form (submit)="login()">
+      <mat-form-field appearance="fill">
+        <mat-label>username</mat-label>
+        <input matInput type="text" [(ngModel)]="username" [ngModelOptions]="{ standalone: true }" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password" [ngModelOptions]="{ standalone: true }" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Login</button>
+      
+      <button mat-button type="button" (click)="redirectToSignUp()">Sign Up</button>
+
+      <div *ngIf="errorMessage" class="error-message">
+        <mat-error>{{ errorMessage }}</mat-error>
+      </div>
+    </form>
+  </div>
+</div>

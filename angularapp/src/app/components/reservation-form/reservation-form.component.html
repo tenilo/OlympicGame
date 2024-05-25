@@ -1,0 +1,38 @@
+<div class="container mt-3">
+  <form [formGroup]="reservationForm" (ngSubmit)="submitReservation()" novalidate class="reservation-form">
+
+    <div class="form-group">
+      <label for="firstName">Prénom</label>
+      <i class="form-icon fas fa-user"></i>
+      <input type="text" formControlName="firstName" id="firstName" placeholder="Prénom" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Nom de famille</label>
+      <i class="form-icon fas fa-users"></i>
+      <input type="text" formControlName="lastName" id="lastName" placeholder="Nom de famille" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <i class="form-icon fas fa-envelope"></i>
+      <input type="email" formControlName="email" id="email" placeholder="Email" class="form-control">
+    </div>
+
+    <div *ngIf="cartItems.length > 0">
+      <h3>Résumé de votre commande :</h3>
+      <ul>
+        <li *ngFor="let item of cartItems">
+          {{ item.quantity }} x {{ item.offer.type }} - {{ item.offer.description }}: {{ item.quantity * item.offer.price }}€
+        </li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <h4>Total à payer: {{ calculateTotalPrice() }}€</h4>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" [disabled]="!reservationForm.valid">Valider la réservation</button>
+    </div>
+
+  </form>
+</div>

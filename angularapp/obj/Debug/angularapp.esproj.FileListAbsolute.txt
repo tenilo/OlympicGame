@@ -1,0 +1,2 @@
+C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame2\angularapp\obj\Debug\angularapp.esproj.CoreCompileInputs.cache
+C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\angularapp\obj\Debug\angularapp.esproj.CoreCompileInputs.cache

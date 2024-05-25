@@ -1,0 +1,33 @@
+<div class="auth-form-container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="authForm" class="auth-form">
+    <div>
+      <label for="firstName">Prénom</label>
+      <input type="text" id="firstName" formControlName="firstName" required>
+    </div>
+    <div>
+      <label for="lastName">Nom</label>
+      <input type="text" id="lastName" formControlName="lastName" required>
+    </div>
+    <div>
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" id="username" formControlName="username" required>
+      
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" required>
+    </div>
+    <div>
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" formControlName="password" required>
+      <div *ngIf="authForm.get('password')?.touched || authForm.get('password')?.dirty">
+        <small class="error" *ngIf="authForm.get('password')?.errors?.['minLength']">{{ authForm.get('password')?.errors?.['minLength'] }}</small>
+        <small class="error" *ngIf="authForm.get('password')?.errors?.['uppercase']">{{ authForm.get('password')?.errors?.['uppercase'] }}</small>
+        <small class="error" *ngIf="authForm.get('password')?.errors?.['lowercase']">{{ authForm.get('password')?.errors?.['lowercase'] }}</small>
+        <small class="error" *ngIf="authForm.get('password')?.errors?.['digit']">{{ authForm.get('password')?.errors?.['digit'] }}</small>
+        <small class="error" *ngIf="authForm.get('password')?.errors?.['specialChar']">{{ authForm.get('password')?.errors?.['specialChar'] }}</small>
+      </div>
+    </div>
+    <button type="submit"> S'inscrire </button>
+  </form>
+</div>

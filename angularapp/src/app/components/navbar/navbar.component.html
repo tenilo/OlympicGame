@@ -1,0 +1,9 @@
+<mat-toolbar>
+  <a mat-button routerLink="/">Home</a>
+  <span class="spacer"></span>
+  <button mat-icon-button [matBadge]="cartItemCount" matBadgeColor="accent" routerLink="/cart">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <button *ngIf="isLoggedIn$ | async" (click)="logout()">Logout</button>
+  <button mat-button *ngIf="!(isLoggedIn$ | async)" [routerLink]="['admin/login']">Login</button>
+</mat-toolbar>

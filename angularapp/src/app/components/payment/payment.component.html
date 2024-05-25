@@ -1,0 +1,28 @@
+<h2>Page de Paiement</h2>
+<form (submit)="processPayment()" class="payment-form">
+  <!-- Numéro de la carte -->
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Numéro de carte</mat-label>
+    <input matInput type="text" placeholder="Entrez le numéro de votre carte" [(ngModel)]="cardNumber" [ngModelOptions]="{standalone: true}" required>
+    <mat-icon matSuffix>credit_card</mat-icon>
+  </mat-form-field>
+
+  <!-- Date d'expiration -->
+  <mat-form-field appearance="outline" class="half-width">
+    <mat-label>Date d'expiration</mat-label>
+    <input matInput type="text" placeholder="MM/AA" [(ngModel)]="expiryDate" [ngModelOptions]="{standalone: true}" required>
+  </mat-form-field>
+
+  <!-- CVV -->
+  <mat-form-field appearance="outline" class="half-width">
+    <mat-label>CVV</mat-label>
+    <input matInput type="text" placeholder="CVV" [(ngModel)]="cvv" [ngModelOptions]="{standalone: true}" required>
+    <mat-icon matSuffix>lock</mat-icon>
+  </mat-form-field>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button mat-raised-button color="primary" type="submit">Payer</button>
+    <button mat-button color="warn" (click)="dialogRef.close()">Annuler</button>
+  </div>
+</form>

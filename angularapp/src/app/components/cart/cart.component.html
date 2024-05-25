@@ -1,0 +1,37 @@
+<div class="cart-container">
+  <mat-card>
+     
+        <div class="row">
+            <mat-card-title class="column">Votre Panier</mat-card-title>
+            <button mat-button (click)="goBacToOffer()" color="primary" class="column">Retour aux offres</button>
+        </div>
+      
+      <mat-card-content>
+          <div *ngFor="let item of cartItems; let i = index">
+              <mat-card class="cart-item">
+                  <div>
+                      <p>{{ item.offer.type }} - {{ item.offer.description }} - {{ item.offer.price }}€ x {{ item.quantity }}</p>
+                  </div>
+                  <div class="button-group">
+                      <button mat-icon-button color="primary" (click)="decreaseQuantity(i)">
+                          <mat-icon>remove</mat-icon>
+                      </button>
+                      <span>{{ item.quantity }}</span>
+                      <button mat-icon-button color="primary" (click)="increaseQuantity(i)">
+                          <mat-icon>add</mat-icon>
+                      </button>
+                      <button mat-button color="warn" (click)="removeFromCart(i)">Retirer</button>
+                  </div>
+              </mat-card>
+          </div>
+          <p *ngIf="cartItems.length > 0" class="total-price">Total : {{ getTotalPrice() }}€</p>
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-button (click)="clearCart()" *ngIf="cartItems.length > 0" color="warn">Vider le Panier</button>
+          <button mat-button (click)="goToReservationForm()" *ngIf="cartItems.length > 0" color="primary">Finaliser la commande</button>
+      </mat-card-actions>
+  </mat-card>
+  <div *ngIf="cartItems.length === 0" class="empty-cart-message">
+      <p>Votre panier est vide.</p>
+  </div>
+</div>
