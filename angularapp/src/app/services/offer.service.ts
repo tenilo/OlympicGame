@@ -11,7 +11,8 @@ export class OfferService {
   private offers: Offer[] = []; // Stock des offres initiales ou chargées.
   private offersSubject = new BehaviorSubject<Offer[]>(this.offers)
   private offersObservable = this.offersSubject.asObservable();
-  private baseUrl: string = 'https://localhost:7229/api/Offre'
+  private baseUrl: string = 'http://localhost:8000/api/offre'
+  //private baseUrl: string = 'https://localhost:7229/api/Offre'
   //private baseUrl: string = 'http://tenilo-001-site1.ctempurl.com/'
   //private baseUrl = environment.url;
   private httpOptions = {

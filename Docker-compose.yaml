@@ -1,0 +1,29 @@
+version: '3.4'
+ 
+services:
+  api:
+    build:
+      context: ./webapi
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+      - "8443:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    restart: unless-stopped
+ 
+  client:
+    build:
+      context: ./angularapp
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    restart: unless-stopped
+ 
+  # database:
+  #   image: "mcr.microsoft.com/mssql/server"
+  #   environment:
+  #     SA_PASSWORD: "yourStrong(!)Password"
+  #     ACCEPT_EULA: "Y"
+  #   ports:
+  #     - "1433:1433"

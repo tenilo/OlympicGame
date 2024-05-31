@@ -20,7 +20,9 @@ builder.Services.AddCors(options =>
         //on autorise toutes les origines, en-tête et méthodes à acceder à l'api
         builder.AllowAnyOrigin()
                .AllowAnyHeader()
-               .AllowAnyMethod();
+               .AllowAnyMethod()
+               
+               ;
     });
 });
 builder.Services.AddSingleton<IConnection, ConnectionMiddleware>();

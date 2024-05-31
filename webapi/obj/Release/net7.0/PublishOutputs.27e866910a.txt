@@ -11,7 +11,7 @@ C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Release\net7
 C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Release\net7.0\PubTmp\Out\wwwroot\assets\img\\track.jpeg
 C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Release\net7.0\PubTmp\Out\wwwroot\\favicon.ico
 C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Release\net7.0\PubTmp\Out\wwwroot\\index.html
-C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Release\net7.0\PubTmp\Out\wwwroot\\main.f5949a6e6cb95aeb.js
+C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Release\net7.0\PubTmp\Out\wwwroot\\main.db989e0ff5610298.js
 C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Release\net7.0\PubTmp\Out\wwwroot\\polyfills.c9ea47c86d4f4391.js
 C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Release\net7.0\PubTmp\Out\wwwroot\\runtime.2d99e508040b4ce1.js
 C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Release\net7.0\PubTmp\Out\wwwroot\\styles.8eaef72f4c71f760.css
