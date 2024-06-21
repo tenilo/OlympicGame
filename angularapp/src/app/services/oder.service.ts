@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Order } from '../models/order';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
-  private baseUrl = 'https://localhost:7229/api/User';
+  private baseUrl = environment.url;
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
   };
@@ -26,7 +27,7 @@ export class OrderService {
       tickets: cartItems
     };
     
-    return this.http.post<any>(`${this.baseUrl}/Command`, order,this.httpOptions);
+    return this.http.post<any>(`${this.baseUrl}/User/Command`, order,this.httpOptions);
   }
   
 
@@ -39,11 +40,11 @@ export class OrderService {
     }
 
   saveOrder(orderData: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/orders`, orderData);
+    return this.http.post(`${this.baseUrl}/User/orders`, orderData);
   }
 
   getQRCodeByUserId(userId: number): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/orders?userId=${userId}`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/User/orders?userId=${userId}`).pipe(
       map(response => response[0])
     );
   }

@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, timer } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { Observable, of} from 'rxjs';
+import { catchError,  tap } from 'rxjs/operators';
 import { Order } from '../models/order'; 
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SalesService {
-  private baseUrl = 'https://localhost:7229/api/User'; 
+  private baseUrl = environment.url; 
   
 
   constructor(private http: HttpClient) {}
   getSalesWithOfferDetails(): Observable<Order>{
-    return this.http.get<Order>(`${this.baseUrl}/CommadHistory`).pipe(
+    return this.http.get<Order>(`${this.baseUrl}/User/CommadHistory`).pipe(
       tap(_ => console.log('fetched Order')),
       catchError(this.handleError<Order>('getOrder'))
     );

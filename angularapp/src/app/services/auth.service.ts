@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, map, Observable, tap, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'https://localhost:7229/api/User';
+  private baseUrl = environment.url;
 
   private loggedIn = new BehaviorSubject<boolean>(this.checkInitialLoginStatus());
   private userType = new BehaviorSubject<string>('user'); 
@@ -34,7 +35,7 @@ export class AuthService {
       "password": password
       };
      
-    return this.http.post<any>(`${this.baseUrl}/authentificate`, data,this.httpOptions).pipe(
+    return this.http.post<any>(`${this.baseUrl}/User/authentificate`, data,this.httpOptions).pipe(
       tap(users => {
         if (users) {
           const user = users;
@@ -63,7 +64,7 @@ export class AuthService {
   
 
   signUp(userData: { firstName: string; lastName: string; email: string; password: string }): Observable<any> {
-    return this.http.post(`${this.baseUrl}/NewUser`, userData,this.httpOptions);
+    return this.http.post(`${this.baseUrl}/User/NewUser`, userData,this.httpOptions);
   }
   getCurrentUser() {
     const userJson = localStorage.getItem('user');

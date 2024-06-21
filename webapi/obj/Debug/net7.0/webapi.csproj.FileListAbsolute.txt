@@ -72,8 +72,3 @@ C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Debug\net7.0
 C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Debug\net7.0\webapi.genruntimeconfig.cache
 C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\obj\Debug\net7.0\ref\webapi.dll
 C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\bin\Debug\net7.0\FluentValidation.dll
-C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\bin\Debug\net7.0\DockerDeploiement\App\web.config
-C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\bin\Debug\net7.0\DockerDeploiement\App\appsettings.Development.json
-C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\bin\Debug\net7.0\DockerDeploiement\App\appsettings.json
-C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\bin\Debug\net7.0\DockerDeploiement\App\webapi.deps.json
-C:\Users\YEO\MyProjects\WebApi\OlympicGame\OlympiqueGame\webapi\bin\Debug\net7.0\DockerDeploiement\App\webapi.runtimeconfig.json

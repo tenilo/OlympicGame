@@ -27,7 +27,6 @@ namespace OlympicGame.Controllers
             try
             {
                 IEnumerable<Offre> result = await _repository.GetAll();
-
                 return Ok(result);
             }
             catch (Exception ex)
@@ -44,13 +43,11 @@ namespace OlympicGame.Controllers
             try
             {
                 // validation
+                if (ticket == null) return Content("Invalid Submission");
                 var validation = new TicketDtoValidation();
                 var validationResult = await validation.ValidateAsync(ticket);
                 if (!validationResult.IsValid) return BadRequest(validationResult.Errors);
-                if (ticket == null)
-                {
-                    return Content("Invalid Submission!");
-                }
+               
                 _repository.Create(ticket);
                 return Ok();
             }
@@ -67,13 +64,11 @@ namespace OlympicGame.Controllers
             try
             {
                 // validation
+                if (ticket == null) return Content("Invalid Submission");
                 var validation = new TicketValidation();
                 var validationResult = await validation.ValidateAsync(ticket);
                 if (!validationResult.IsValid) return BadRequest(validationResult.Errors);
-                if (ticket == null)
-                {
-                    return Content("Invalid Submission!");
-                }
+
                 _repository.Update(ticket);
                 return Ok();
             }
