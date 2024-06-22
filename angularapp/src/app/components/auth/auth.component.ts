@@ -11,6 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AuthComponent implements OnInit {
   authForm: FormGroup;
+  errorMessage = '';
+  emailError = 'Le mail saisi n\' est pas valide.'
 
   
 
@@ -19,12 +21,14 @@ export class AuthComponent implements OnInit {
 
   ngOnInit() {
     this.authForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      username: ['', Validators.required],
+      firstName: ['', [Validators.required,this.firstNameValidator('firstName')]],
+      lastName: ['', [Validators.required,this.firstNameValidator('lastName')]],
+      username: ['', [Validators.required,this.firstNameValidator('username')]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, this.passwordValidator()]]
     });
+    
+    
   }
   passwordValidator(): Validators {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -40,6 +44,27 @@ export class AuthComponent implements OnInit {
     };
   }
 
+  firstNameValidator(name: string): Validators {
+    return (control: AbstractControl): ValidationErrors | null => {
+      name = control.value;
+      const errors: ValidationErrors = {};
+      if (!name) return null;
+      if (name.length > 50) errors['maxLength'] = 'Le champ ne doit pas dépasser 50 caractères.';
+      if (name.length < 2) errors['minLength'] = 'Le champ doit contenir au moins 2 caractères.';
+      return Object.keys(errors).length ? errors : null;
+    };
+  }
+
+  emailValidator(): Validators {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const email = control.value;
+      const errors: ValidationErrors = {};
+      if (!email) return null;
+      if (!Validators.email) errors['mail'] = 'Le mail saisi n\' est pas valide.';
+      return Object.keys(errors).length ? errors : null;
+    };
+  }
+
   onSubmit() {
     if (this.authForm.valid) {
      
@@ -50,8 +75,10 @@ export class AuthComponent implements OnInit {
         },
         error: (error) => {
           console.error('Registration failed', error);
+          this.errorMessage = 'some error occurred when trying to save user'
         }
       });
     }
+    
 }
 }

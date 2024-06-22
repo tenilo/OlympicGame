@@ -32,6 +32,7 @@ export class AdminLoginComponent {
       },
       error: (error: any) => {
         console.error('Login failed', error);
+        this.errorMessage = 'Username or password is incorrect';
       }
     });
   }
