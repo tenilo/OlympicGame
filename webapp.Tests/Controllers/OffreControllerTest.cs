@@ -36,6 +36,8 @@ namespace webapp.Tests.Controllers
             Assert.NotNull(result);
             var okResponse = Assert.IsType<OkObjectResult>(actionResult);
             Assert.Equal(StatusCodes.Status200OK, okResponse.StatusCode);
+            var responseList = Assert.IsType<List<Offre>>(okResponse.Value);
+            Assert.Equal(response, okResponse.Value);
         }
 
         [Fact]
